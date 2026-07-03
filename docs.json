@@ -130,16 +130,6 @@
       "href": "https://app.mintlify.com"
     }
   },
-  "contextual": {
-    "options": [
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
   "footer": {
     "socials": {
       "x": "https://x.com/mintlify",
