@@ -1,0 +1,39 @@
+#sidebar-content .sidebar-group {
+  margin-top: calc(1.5rem - 10px) !important;
+}
+
+@media (min-width: 1024px) {
+  #sidebar-content .sidebar-group {
+    margin-top: calc(2rem - 12px) !important;
+  }
+}
+
+/* Group icons — slightly smaller */
+#sidebar-content .sidebar-group > li > button > div:first-child svg {
+  width: 0.875rem !important;
+  height: 0.875rem !important;
+}
+
+/* Group header text — slightly smaller, bolder, black */
+#sidebar-content .sidebar-group > li > button > div:nth-child(2) > span {
+  font-size: 0.8125rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+}
+
+#sidebar-content .sidebar-group > li > button {
+  color: #111827 !important;
+  gap: 0.625rem !important;
+}
+
+.dark #sidebar-content .sidebar-group > li > button {
+  color: #f3f4f6 !important;
+}
+
+#sidebar-content .sidebar-group > li > button:hover {
+  color: #111827 !important;
+}
+
+.dark #sidebar-content .sidebar-group > li > button:hover {
+  color: #f3f4f6 !important;
+}

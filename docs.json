@@ -10,16 +10,10 @@
   "favicon": "/favicon.svg",
   "navigation": {
     "pages": [
-      {
-        "group": "Documentations",
-        "root": "index",
-        "pages": [
-          "index",
-          "documentations/whats-this"
-        ]
-      },
+      "index",
       {
         "group": "Study",
+        "icon": "book-open",
         "root": "study/index",
         "pages": [
           "study/isaac-sim",
@@ -28,7 +22,8 @@
         ]
       },
       {
-        "group": "Troubleshooting",
+        "group": "Troubleshoot",
+        "icon": "wrench",
         "root": "troubleshooting/index",
         "pages": [
           "troubleshooting/isaac-sim",
@@ -37,7 +32,8 @@
         ]
       },
       {
-        "group": "References",
+        "group": "Refs",
+        "icon": "bookmark",
         "root": "references/index",
         "pages": [
           "references/isaac-sim",
@@ -47,6 +43,7 @@
       },
       {
         "group": "Personal",
+        "icon": "user",
         "root": "personal/index",
         "pages": [
           "personal/daily-log",
@@ -54,25 +51,20 @@
           "personal/portfolio"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Portfolio",
-          "href": "/personal/portfolio",
-          "icon": "briefcase"
-        }
-      ]
-    }
+    ]
   },
   "redirects": [
     {
       "source": "/quickstart",
-      "destination": "/documentations/whats-this"
+      "destination": "/"
     },
     {
       "source": "/whats-this",
-      "destination": "/documentations/whats-this"
+      "destination": "/"
+    },
+    {
+      "source": "/documentations/whats-this",
+      "destination": "/"
     },
     {
       "source": "/study-notes",
@@ -122,7 +114,6 @@
   },
   "contextual": {
     "options": [
-      "view",
       "chatgpt",
       "claude",
       "perplexity",
