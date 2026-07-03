@@ -48,19 +48,18 @@
         ]
       },
       {
-        "tab": "Projects",
-        "icon": "folder-open",
-        "pages": [
-          "projects/index",
-          "projects/portfolio"
-        ]
-      },
-      {
         "tab": "Personal",
         "icon": "user",
         "pages": [
           "personal/index",
-          "personal/daily-log"
+          {
+            "group": "Projects",
+            "icon": "folder-open",
+            "root": "projects/index",
+            "pages": [
+              "projects/portfolio"
+            ]
+          }
         ]
       }
     ]
