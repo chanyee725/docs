@@ -1,12 +1,9 @@
-function findLogoTabsSlot() {
-  const logoLink = document.querySelector('#navbar a[href="/"]');
-  const slot = logoLink?.nextElementSibling;
+function findNavbarTabsCenterSlot() {
+  const navbarRow = document.querySelector(
+    '#navbar .h-16 .h-full.relative.flex-1',
+  );
 
-  if (!slot || !slot.classList.contains('hidden')) {
-    return null;
-  }
-
-  return slot;
+  return navbarRow?.querySelector(':scope > .hidden.lg\\:flex.justify-center') ?? null;
 }
 
 function hideNavbarTabsRow() {
@@ -25,7 +22,8 @@ function repositionNavbarTabs() {
   }
 
   const slot =
-    document.getElementById('navbar-tabs-inline-slot') || findLogoTabsSlot();
+    document.getElementById('navbar-tabs-center-slot') ||
+    findNavbarTabsCenterSlot();
 
   if (!slot) {
     return;
@@ -39,7 +37,14 @@ function repositionNavbarTabs() {
     }
   }
 
-  slot.id = 'navbar-tabs-inline-slot';
+  const logoSlot = document.getElementById('navbar-tabs-inline-slot');
+
+  if (logoSlot && logoSlot !== slot) {
+    logoSlot.removeAttribute('id');
+  }
+
+  slot.id = 'navbar-tabs-center-slot';
+  slot.style.display = 'flex';
 
   if (navTabs.parentElement !== slot) {
     slot.appendChild(navTabs);
@@ -57,7 +62,7 @@ function repositionNavbarSearch() {
     return;
   }
 
-  const centerWrapper = searchBtn.parentElement;
+  const centerWrapper = searchBtn.closest('.hidden.lg\\:flex.justify-center');
   const list = dashboardLi.parentElement;
 
   if (!list || list.tagName !== 'UL') {
@@ -75,7 +80,7 @@ function repositionNavbarSearch() {
 
   slot.appendChild(searchBtn);
 
-  if (centerWrapper) {
+  if (centerWrapper && centerWrapper.id !== 'navbar-tabs-center-slot') {
     centerWrapper.id = 'navbar-search-center-slot';
     centerWrapper.style.display = 'none';
   }
@@ -84,20 +89,18 @@ function repositionNavbarSearch() {
 }
 
 function initNavbarLayout() {
-  repositionNavbarTabs();
   repositionNavbarSearch();
+  repositionNavbarTabs();
 
-  if (
-    document.querySelector('.nav-tabs')?.parentElement?.id !==
-    'navbar-tabs-inline-slot'
-  ) {
-    window.setTimeout(repositionNavbarTabs, 50);
-    window.setTimeout(repositionNavbarTabs, 250);
-  }
+  const tabsReady =
+    document.querySelector('.nav-tabs')?.parentElement?.id ===
+    'navbar-tabs-center-slot';
+  const searchReady =
+    document.getElementById('search-bar-entry')?.dataset.repositioned === 'true';
 
-  if (document.getElementById('search-bar-entry')?.dataset.repositioned !== 'true') {
-    window.setTimeout(repositionNavbarSearch, 50);
-    window.setTimeout(repositionNavbarSearch, 250);
+  if (!tabsReady || !searchReady) {
+    window.setTimeout(initNavbarLayout, 50);
+    window.setTimeout(initNavbarLayout, 250);
   }
 }
 
