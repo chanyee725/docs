@@ -18,37 +18,33 @@
           {
             "group": "Study",
             "icon": "book-open",
+            "root": "study/index",
             "pages": [
               "study/isaac-sim",
               "study/isaac-lab",
               "study/robotics"
             ]
-          },
-          {
-            "group": "Troubleshoot",
-            "icon": "wrench",
-            "pages": [
-              "troubleshooting/isaac-sim",
-              "troubleshooting/dev-env",
-              "troubleshooting/general"
-            ]
-          },
-          {
-            "group": "Refs",
-            "icon": "bookmark",
-            "pages": [
-              "references/isaac-sim",
-              "references/robotics",
-              "references/tools"
-            ]
           }
         ]
       },
       {
-        "tab": "Blog",
-        "icon": "newspaper",
+        "tab": "Troubleshooting",
+        "icon": "wrench",
         "pages": [
-          "blog/index"
+          "troubleshooting/index",
+          "troubleshooting/isaac-sim",
+          "troubleshooting/dev-env",
+          "troubleshooting/general"
+        ]
+      },
+      {
+        "tab": "Refs",
+        "icon": "bookmark",
+        "pages": [
+          "references/index",
+          "references/isaac-sim",
+          "references/robotics",
+          "references/tools"
         ]
       },
       {
@@ -64,8 +60,7 @@
         "icon": "user",
         "pages": [
           "personal/index",
-          "personal/daily-log",
-          "personal/snippets"
+          "personal/daily-log"
         ]
       }
     ]
@@ -78,6 +73,7 @@
     { "source": "/study-notes/isaac-sim", "destination": "/study/isaac-sim" },
     { "source": "/study-notes/isaac-lab", "destination": "/study/isaac-lab" },
     { "source": "/study-notes/robotics", "destination": "/study/robotics" },
+    { "source": "/blog", "destination": "/troubleshooting" },
     { "source": "/snippets", "destination": "/personal/snippets" },
     { "source": "/daily-log", "destination": "/personal/daily-log" },
     { "source": "/portfolio", "destination": "/projects/portfolio" },
