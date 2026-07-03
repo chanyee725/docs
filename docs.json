@@ -9,46 +9,66 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "pages": [
-      "index",
+    "tabs": [
       {
-        "group": "Study",
+        "tab": "Documentation",
         "icon": "book-open",
-        "root": "study/index",
         "pages": [
-          "study/isaac-sim",
-          "study/isaac-lab",
-          "study/robotics"
+          "index",
+          {
+            "group": "Study",
+            "icon": "book-open",
+            "root": "study/index",
+            "pages": [
+              "study/isaac-sim",
+              "study/isaac-lab",
+              "study/robotics"
+            ]
+          },
+          {
+            "group": "Troubleshoot",
+            "icon": "wrench",
+            "root": "troubleshooting/index",
+            "pages": [
+              "troubleshooting/isaac-sim",
+              "troubleshooting/dev-env",
+              "troubleshooting/general"
+            ]
+          },
+          {
+            "group": "Refs",
+            "icon": "bookmark",
+            "root": "references/index",
+            "pages": [
+              "references/isaac-sim",
+              "references/robotics",
+              "references/tools"
+            ]
+          }
         ]
       },
       {
-        "group": "Troubleshoot",
-        "icon": "wrench",
-        "root": "troubleshooting/index",
+        "tab": "Blog",
+        "icon": "newspaper",
         "pages": [
-          "troubleshooting/isaac-sim",
-          "troubleshooting/dev-env",
-          "troubleshooting/general"
+          "blog/index"
         ]
       },
       {
-        "group": "Refs",
-        "icon": "bookmark",
-        "root": "references/index",
+        "tab": "Projects",
+        "icon": "folder-open",
         "pages": [
-          "references/isaac-sim",
-          "references/robotics",
-          "references/tools"
+          "projects/index",
+          "projects/portfolio"
         ]
       },
       {
-        "group": "Personal",
+        "tab": "Personal",
         "icon": "user",
-        "root": "personal/index",
         "pages": [
+          "personal/index",
           "personal/daily-log",
-          "personal/snippets",
-          "personal/portfolio"
+          "personal/snippets"
         ]
       }
     ]
@@ -92,7 +112,11 @@
     },
     {
       "source": "/portfolio",
-      "destination": "/personal/portfolio"
+      "destination": "/projects/portfolio"
+    },
+    {
+      "source": "/personal/portfolio",
+      "destination": "/projects/portfolio"
     }
   ],
   "logo": {
