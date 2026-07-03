@@ -52,6 +52,7 @@ function repositionNavbarTabs() {
 
   hideNavbarTabsRow();
   document.documentElement.dataset.navbarTabsInline = 'true';
+  markNavbarLayoutReady();
 }
 
 function repositionNavbarSearch() {
@@ -86,21 +87,42 @@ function repositionNavbarSearch() {
   }
 
   searchBtn.dataset.repositioned = 'true';
+  markNavbarLayoutReady();
 }
+
+function isNavbarLayoutReady() {
+  const tabsReady =
+    document.querySelector('.nav-tabs')?.parentElement?.id ===
+    'navbar-tabs-center-slot';
+  const searchBtn = document.getElementById('search-bar-entry');
+  const searchReady =
+    !searchBtn || searchBtn.dataset.repositioned === 'true';
+
+  return tabsReady && searchReady;
+}
+
+function markNavbarLayoutReady() {
+  if (isNavbarLayoutReady()) {
+    document.documentElement.dataset.navbarLayoutReady = 'true';
+  }
+}
+
+let navbarLayoutRetries = 0;
+const NAVBAR_LAYOUT_MAX_RETRIES = 20;
 
 function initNavbarLayout() {
   repositionNavbarSearch();
   repositionNavbarTabs();
+  markNavbarLayoutReady();
 
-  const tabsReady =
-    document.querySelector('.nav-tabs')?.parentElement?.id ===
-    'navbar-tabs-center-slot';
-  const searchReady =
-    document.getElementById('search-bar-entry')?.dataset.repositioned === 'true';
+  if (!isNavbarLayoutReady() && navbarLayoutRetries < NAVBAR_LAYOUT_MAX_RETRIES) {
+    navbarLayoutRetries += 1;
+    window.requestAnimationFrame(initNavbarLayout);
+    return;
+  }
 
-  if (!tabsReady || !searchReady) {
-    window.setTimeout(initNavbarLayout, 50);
-    window.setTimeout(initNavbarLayout, 250);
+  if (!isNavbarLayoutReady()) {
+    document.documentElement.dataset.navbarLayoutReady = 'true';
   }
 }
 
