@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "My Docs",
   "colors": {
     "primary": "#16A34A",
@@ -18,7 +18,6 @@
           {
             "group": "Study",
             "icon": "book-open",
-            "root": "study/index",
             "pages": [
               "study/isaac-sim",
               "study/isaac-lab",
@@ -28,7 +27,6 @@
           {
             "group": "Troubleshoot",
             "icon": "wrench",
-            "root": "troubleshooting/index",
             "pages": [
               "troubleshooting/isaac-sim",
               "troubleshooting/dev-env",
@@ -38,7 +36,6 @@
           {
             "group": "Refs",
             "icon": "bookmark",
-            "root": "references/index",
             "pages": [
               "references/isaac-sim",
               "references/robotics",
@@ -74,50 +71,17 @@
     ]
   },
   "redirects": [
-    {
-      "source": "/quickstart",
-      "destination": "/"
-    },
-    {
-      "source": "/whats-this",
-      "destination": "/"
-    },
-    {
-      "source": "/documentations/whats-this",
-      "destination": "/"
-    },
-    {
-      "source": "/study-notes",
-      "destination": "/study"
-    },
-    {
-      "source": "/study-notes/isaac-sim",
-      "destination": "/study/isaac-sim"
-    },
-    {
-      "source": "/study-notes/isaac-lab",
-      "destination": "/study/isaac-lab"
-    },
-    {
-      "source": "/study-notes/robotics",
-      "destination": "/study/robotics"
-    },
-    {
-      "source": "/snippets",
-      "destination": "/personal/snippets"
-    },
-    {
-      "source": "/daily-log",
-      "destination": "/personal/daily-log"
-    },
-    {
-      "source": "/portfolio",
-      "destination": "/projects/portfolio"
-    },
-    {
-      "source": "/personal/portfolio",
-      "destination": "/projects/portfolio"
-    }
+    { "source": "/quickstart", "destination": "/" },
+    { "source": "/whats-this", "destination": "/" },
+    { "source": "/documentations/whats-this", "destination": "/" },
+    { "source": "/study-notes", "destination": "/study" },
+    { "source": "/study-notes/isaac-sim", "destination": "/study/isaac-sim" },
+    { "source": "/study-notes/isaac-lab", "destination": "/study/isaac-lab" },
+    { "source": "/study-notes/robotics", "destination": "/study/robotics" },
+    { "source": "/snippets", "destination": "/personal/snippets" },
+    { "source": "/daily-log", "destination": "/personal/daily-log" },
+    { "source": "/portfolio", "destination": "/projects/portfolio" },
+    { "source": "/personal/portfolio", "destination": "/projects/portfolio" }
   ],
   "logo": {
     "light": "/logo/light.svg",

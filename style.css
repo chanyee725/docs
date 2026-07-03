@@ -1,3 +1,6 @@
+/* Navigation/sidebar overrides temporarily disabled for debugging */
+
+/*
 #sidebar-content .sidebar-group {
   margin-top: calc(1.5rem - 10px) !important;
 }
@@ -8,13 +11,11 @@
   }
 }
 
-/* Group icons — slightly smaller */
 #sidebar-content .sidebar-group > li > button > div:first-child svg {
   width: 0.875rem !important;
   height: 0.875rem !important;
 }
 
-/* Group header text — slightly smaller, bolder, black */
 #sidebar-content .sidebar-group > li > button > div:nth-child(2) > span {
   font-size: 0.8125rem !important;
   font-weight: 700 !important;
@@ -37,172 +38,4 @@
 .dark #sidebar-content .sidebar-group > li > button:hover {
   color: #f3f4f6 !important;
 }
-
-/* Tabs centered in navbar (see navbar-search.js) */
-@media (min-width: 1024px) {
-  /* Anti-FOUC: hide default tab row before JS repositions DOM */
-  #navbar .hidden.lg\:flex.px-12.h-12 {
-    display: none !important;
-  }
-
-  html:not([data-navbar-layout-ready="true"]) #navbar .nav-tabs,
-  html:not([data-navbar-layout-ready="true"]) #search-bar-entry {
-    opacity: 0 !important;
-    pointer-events: none !important;
-  }
-
-  html:not([data-navbar-layout-ready="true"])
-    #navbar
-    .h-16
-    .h-full.relative.flex-1
-    > .hidden.lg\:flex.justify-center {
-    visibility: hidden !important;
-  }
-
-  #navbar .h-16 .h-full.relative.flex-1 {
-    position: relative !important;
-  }
-
-  #navbar-tabs-row {
-    display: none !important;
-  }
-
-  #navbar-tabs-center-slot {
-    display: flex !important;
-    align-items: center;
-    justify-content: center !important;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    pointer-events: none;
-    z-index: 25;
-  }
-
-  #navbar-tabs-center-slot .nav-tabs {
-    pointer-events: auto;
-    height: auto !important;
-    gap: 1.5rem !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border-radius: 0 !important;
-    transition: opacity 0.15s ease;
-  }
-
-  html[data-navbar-layout-ready="true"] #navbar-tabs-center-slot .nav-tabs,
-  html[data-navbar-layout-ready="true"] #search-bar-entry {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transition: opacity 0.15s ease;
-  }
-
-  html[data-navbar-layout-ready="true"]
-    #navbar
-    .h-16
-    .h-full.relative.flex-1
-    > #navbar-tabs-center-slot {
-    visibility: visible !important;
-  }
-
-  #navbar-tabs-center-slot .nav-tabs-item {
-    height: auto !important;
-    gap: 0 !important;
-    padding: 0.375rem 0.875rem !important;
-    border-radius: 9999px !important;
-    font-size: 0.875rem !important;
-    font-weight: 500 !important;
-    color: #111827 !important;
-    text-shadow: none !important;
-    transition: background-color 0.15s ease, color 0.15s ease;
-  }
-
-  #navbar-tabs-center-slot .nav-tabs-item svg {
-    display: none !important;
-  }
-
-  #navbar-tabs-center-slot .nav-tabs-item:not([data-active="true"]) {
-    background: transparent !important;
-    color: #111827 !important;
-  }
-
-  #navbar-tabs-center-slot .nav-tabs-item:not([data-active="true"]):hover {
-    color: #374151 !important;
-  }
-
-  #navbar-tabs-center-slot .nav-tabs-item[data-active="true"] {
-    background: #f3f4f6 !important;
-    box-shadow: none !important;
-    color: #111827 !important;
-  }
-
-  .dark #navbar-tabs-center-slot .nav-tabs-item {
-    color: #f3f4f6 !important;
-  }
-
-  .dark #navbar-tabs-center-slot .nav-tabs-item:not([data-active="true"]):hover {
-    color: #e5e7eb !important;
-  }
-
-  .dark #navbar-tabs-center-slot .nav-tabs-item[data-active="true"] {
-    background: rgba(255, 255, 255, 0.1) !important;
-    color: #f9fafb !important;
-  }
-
-  #navbar-tabs-center-slot .nav-tabs-item > div.absolute {
-    display: none !important;
-  }
-
-  #sidebar {
-    top: 4rem !important;
-  }
-
-  .hidden.xl\:flex.self-start.sticky {
-    top: calc(4rem - var(--sidenav-move-up, 0px)) !important;
-    height: calc(100vh - 4rem) !important;
-  }
-}
-
-/* Search icon — compact, sits between Support and Dashboard (see navbar-search.js) */
-@media (min-width: 1024px) {
-  #search-bar-nav-slot {
-    display: flex;
-    align-items: center;
-  }
-
-  #search-bar-entry {
-    width: 2.25rem !important;
-    height: 2.25rem !important;
-    min-width: 2.25rem !important;
-    padding: 0 !important;
-    justify-content: center !important;
-    border-radius: 9999px !important;
-    background: rgba(3, 7, 18, 0.03) !important;
-    box-shadow: none !important;
-    border: none !important;
-  }
-
-  .dark #search-bar-entry {
-    background: rgba(255, 255, 255, 0.03) !important;
-  }
-
-  #search-bar-entry:hover {
-    background: rgba(3, 7, 18, 0.08) !important;
-  }
-
-  .dark #search-bar-entry:hover {
-    background: rgba(255, 255, 255, 0.08) !important;
-  }
-
-  #search-bar-entry .truncate,
-  #search-bar-entry > span.flex-none {
-    display: none !important;
-  }
-
-  #search-bar-entry > div.flex.items-center {
-    gap: 0 !important;
-  }
-
-  #navbar-search-center-slot {
-    display: none !important;
-  }
-}
+*/
