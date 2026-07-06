@@ -1,18 +1,62 @@
 ---
 title: "Projects"
 sidebarTitle: "Overview"
-description: "Things you're building and have built"
+description: "진행 중이거나 완료한 프로젝트"
 hideFooterPagination: true
 ---
 
-Active experiments and finished work. Portfolio lives here — separate from study notes and private logs.
+진행 중이거나 완료한 프로젝트를 정리하는 섹션입니다.
 
-<Columns cols={2}>
-  <Card title="Portfolio" icon="briefcase" href="/projects/portfolio">
-    Finished projects, demos, and things you've shipped.
-  </Card>
-</Columns>
+<div className="project-entry">
+  <div className="project-entry-media">
+    <a href="/projects/medical-smart-mirror">
+      <img
+        src="/projects/images/medical-smart-mirror.png"
+        alt="의료용 스마트미러 서비스"
+      />
+    </a>
+  </div>
+  <div className="project-entry-content">
+    <h3 className="project-entry-title">
+      <a href="/projects/medical-smart-mirror">의료용 스마트미러 서비스</a>
+    </h3>
+    <p className="project-entry-desc">
+      의료 환경을 위한 스마트미러 서비스 프로젝트입니다. 환자·의료진이 사용하는 미러 인터페이스와 연동 서비스를 다룹니다.
+    </p>
+    <div className="project-entry-meta">
+      <span className="project-entry-period">2023.10 – 2024.02</span>
+      <div className="project-entry-tags">
+        <span className="project-entry-tag">Healthcare</span>
+        <span className="project-entry-tag">Smart Mirror</span>
+        <span className="project-entry-tag">UI/UX</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-## Active projects
-
-Add pages here as you start new work — robotics sims, side projects, experiments.
+<div className="project-entry">
+  <div className="project-entry-media">
+    <a href="/projects/photo-immersion">
+      <img
+        src="/projects/images/photo-immersion.png"
+        alt="포토 이머전시"
+      />
+    </a>
+  </div>
+  <div className="project-entry-content">
+    <h3 className="project-entry-title">
+      <a href="/projects/photo-immersion">포토 이머전시</a>
+    </h3>
+    <p className="project-entry-desc">
+      포토 이머전시 체험·서비스 프로젝트입니다. 촬영부터 몰입형 전시·공유까지의 사용자 흐름을 정리합니다.
+    </p>
+    <div className="project-entry-meta">
+      <span className="project-entry-period">2023.11</span>
+      <div className="project-entry-tags">
+        <span className="project-entry-tag">Team Project</span>
+        <span className="project-entry-tag">Photo Booth</span>
+        <span className="project-entry-tag">Exhibition</span>
+      </div>
+    </div>
+  </div>
+</div>
