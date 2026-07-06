@@ -16,14 +16,24 @@
         "pages": [
           "index",
           {
-            "group": "Study",
-            "icon": "book-open",
-            "root": "study/index",
+            "group": "Isaac Sim",
+            "icon": "cube",
+            "root": "isaac-sim/index",
             "pages": [
-              "study/isaac-sim",
-              "study/isaac-lab",
-              "study/robotics"
+              "isaac-sim/installation"
             ]
+          },
+          {
+            "group": "Isaac Lab",
+            "icon": "flask",
+            "root": "isaac-lab/index",
+            "pages": []
+          },
+          {
+            "group": "Robotics",
+            "icon": "robot",
+            "root": "robotics/index",
+            "pages": []
           }
         ]
       },
@@ -79,10 +89,14 @@
     { "source": "/quickstart", "destination": "/" },
     { "source": "/whats-this", "destination": "/" },
     { "source": "/documentations/whats-this", "destination": "/" },
-    { "source": "/study-notes", "destination": "/study" },
-    { "source": "/study-notes/isaac-sim", "destination": "/study/isaac-sim" },
-    { "source": "/study-notes/isaac-lab", "destination": "/study/isaac-lab" },
-    { "source": "/study-notes/robotics", "destination": "/study/robotics" },
+    { "source": "/study", "destination": "/" },
+    { "source": "/study/isaac-sim", "destination": "/isaac-sim" },
+    { "source": "/study/isaac-lab", "destination": "/isaac-lab" },
+    { "source": "/study/robotics", "destination": "/robotics" },
+    { "source": "/study-notes", "destination": "/" },
+    { "source": "/study-notes/isaac-sim", "destination": "/isaac-sim" },
+    { "source": "/study-notes/isaac-lab", "destination": "/isaac-lab" },
+    { "source": "/study-notes/robotics", "destination": "/robotics" },
     { "source": "/blog", "destination": "/troubleshooting" },
     { "source": "/troubleshooting/isaac-sim", "destination": "/troubleshooting/isaac/isaac-sim" },
     { "source": "/troubleshooting/isaac-lab", "destination": "/troubleshooting/isaac/isaac-lab" },

@@ -1,3 +1,9 @@
+/* Sidebar — remove left border indicator on nav links and group headers */
+#sidebar-content li > a,
+#sidebar-content li > button {
+  border-left: none !important;
+}
+
 /* Left sidebar — tighten spacing between nav blocks (~5px) */
 #sidebar-content > div.flex.flex-col {
   gap: calc(1rem - 5px) !important;
