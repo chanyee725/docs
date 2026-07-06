@@ -1,0 +1,52 @@
+---
+title: "Isaac Sim에서 Mycobot 280pi 및 Adaptive Gripper 밀림(Sliding) 현상 해결"
+sidebarTitle: "Gripper sliding"
+description: "Isaac Sim 환경에서 Mycobot 280pi와 Adaptive Gripper를 사용할 때 로봇이 뒤로 밀리는 현상을 진단하고 해결한 기록입니다."
+---
+
+*작성일 · 2026-07-06*
+
+## 1. 발생 환경 (Environment)
+
+| Item | Value |
+| ---- | ----- |
+| Simulator | Omniverse Isaac Sim |
+| Robot model | Elephant Robotics Mycobot 280pi |
+| End effector | Adaptive Gripper |
+| Task | 로봇 학습(RL / motion planning) 환경 구축 |
+
+## 2. 문제 현상 (Issue & Symptom)
+
+Isaac Sim에 Mycobot 280pi 모델과 Adaptive Gripper를 로드해 시뮬레이션을 실행하면, 로봇 베이스가 고정되지 않고 **로봇 전체 또는 그리퍼 파트가 뒤로 밀리는 현상(Sliding)** 이 발생했습니다.
+
+이 상태에서는 정상적인 조인트 제어 및 강화학습 / 모션 플래닝 테스트를 진행할 수 없었습니다.
+
+## 3. 원인 분석 (Root Cause)
+
+**물리 엔진의 질량 불균형 (Physics Instability)**
+
+Isaac Sim(PhysX)에서 로봇을 구성하는 각 링크(Link)와 조인트(Joint)의 Rigid Body 속성 중 **질량(Mass)** 값이 비정상적으로 작거나 크게 설정되면 불안정성이 발생합니다.
+
+특히 다음 조건에서 문제가 두드러집니다.
+
+- 베이스 모델(Mycobot)과 엔드 이펙터(Adaptive Gripper) 간 **질량 비율(Mass Ratio)** 차이가 클 때
+- **관성 텐서(Inertia Tensor)** 가 물리적 현실성과 어긋날 때
+
+이 경우 시뮬레이터가 충돌 및 반발력을 계산하는 과정에서 모델이 튕기거나 밀려납니다.
+
+## 4. 해결 방법 (Resolution)
+
+**Rigid Body 질량(Mass) 파라미터 튜닝**
+
+1. 로봇 본체(Robot Joint)와 그리퍼 파트(Gripper Joint)의 **Property → Physics (Rigid Body)** 탭으로 이동합니다.
+2. 각 링크·조인트의 Mass 값을 확인합니다.
+3. 물리 시뮬레이션이 안정적으로 계산되도록 — 실제 하드웨어 스펙에 가깝게 — 로봇 조인트 및 그리퍼 조인트의 Mass를 **적절한 비율로 상향/하향 조정**합니다.
+4. 수정 후 시뮬레이션을 재실행해 밀림 현상이 사라졌는지 확인합니다.
+
+## 5. 결과 (Result)
+
+Mass 값 수정 후 시뮬레이션을 재실행한 결과, 물리 엔진 연산이 안정화되었습니다.
+
+- 로봇이 더 이상 뒤로 밀리지 않음
+- **정위치에 안정적으로 고정**됨
+- 의도한 대로 조인트 제어 및 학습 환경 구동 가능

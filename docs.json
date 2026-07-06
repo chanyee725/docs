@@ -52,7 +52,9 @@
             "group": "Isaac Lab",
             "icon": "cube",
             "root": "troubleshooting/isaac/isaac-lab",
-            "pages": []
+            "pages": [
+              "troubleshooting/isaac/mycobot-gripper-sliding"
+            ]
           }
         ]
       },
@@ -102,6 +104,7 @@
     { "source": "/study-notes/robotics", "destination": "/robotics" },
     { "source": "/blog", "destination": "/troubleshooting" },
     { "source": "/troubleshooting/isaac", "destination": "/troubleshooting" },
+    { "source": "/isaac-lab/mycobot-gripper-sliding", "destination": "/troubleshooting/isaac/mycobot-gripper-sliding" },
     { "source": "/troubleshooting/isaac-sim", "destination": "/troubleshooting/isaac/isaac-sim" },
     { "source": "/troubleshooting/isaac-lab", "destination": "/troubleshooting/isaac/isaac-lab" },
     { "source": "/troubleshooting/dev-env", "destination": "/troubleshooting" },
