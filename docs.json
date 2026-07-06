@@ -20,7 +20,9 @@
             "icon": "cube",
             "root": "isaac-sim/index",
             "pages": [
+              "isaac-sim/index",
               "isaac-sim/installation",
+              "isaac-sim/environment-setup",
               {
                 "group": "Basics",
                 "root": "isaac-sim/basics/index",
@@ -59,13 +61,17 @@
             "group": "Isaac Lab",
             "icon": "cube",
             "root": "isaac-lab/index",
-            "pages": []
+            "pages": [
+              "isaac-lab/index"
+            ]
           },
           {
             "group": "Robotics",
             "icon": "cube",
             "root": "robotics/index",
-            "pages": []
+            "pages": [
+              "robotics/index"
+            ]
           }
         ]
       },
