@@ -362,25 +362,64 @@ nav#sidebar #navigation-items::-webkit-scrollbar-thumb:hover {
   color: rgb(159 163 160);
 }
 
+.project-entry-rewards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.project-entry-rewards:empty {
+  display: none;
+}
+
+#content .project-entry-rewards .reward-tag,
+.mdx-content .project-entry-rewards .reward-tag,
+.prose .project-entry-rewards .reward-tag,
+.reward-tag {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: rgb(133 77 14) !important;
+  background: rgb(254 240 138) !important;
+}
+
+.dark #content .project-entry-rewards .reward-tag,
+.dark .mdx-content .project-entry-rewards .reward-tag,
+.dark .prose .project-entry-rewards .reward-tag,
+.dark .reward-tag {
+  color: rgb(254 249 195) !important;
+  background: rgb(202 138 4) !important;
+}
+
 .project-entry-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.375rem;
 }
 
+#content .project-entry-tags .project-entry-tag,
+.mdx-content .project-entry-tags .project-entry-tag,
+.prose .project-entry-tags .project-entry-tag,
 .project-entry-tag {
+  display: inline-block;
   padding: 0.125rem 0.5rem;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1.4;
-  color: rgb(15 118 110);
-  background: rgba(13, 148, 136, 0.1);
+  color: rgb(15 118 110) !important;
+  background: rgba(13, 148, 136, 0.1) !important;
 }
 
+.dark #content .project-entry-tags .project-entry-tag,
+.dark .mdx-content .project-entry-tags .project-entry-tag,
+.dark .prose .project-entry-tags .project-entry-tag,
 .dark .project-entry-tag {
-  color: rgb(45 212 191);
-  background: rgba(45, 212, 191, 0.12);
+  color: rgb(45 212 191) !important;
+  background: rgba(45, 212, 191, 0.12) !important;
 }
 
 @media (max-width: 768px) {
