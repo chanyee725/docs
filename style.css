@@ -1,7 +1,98 @@
-/* Sidebar — remove left border indicator on nav links and group headers */
+/*
+ * Sidebar scroll DOM (Mintlify maple):
+ * nav#sidebar.w-[19rem].border-r
+ *   div#sidebar-content.px-7.overflow-y-auto.stable-scrollbar-gutter
+ *     logo + theme toggle
+ *     search
+ *     div#navigation-items.-mx-3  ← scroll container (nav list only)
+ *   ul (Dashboard footer)
+ *
+ * Mintlify links use ml-4 + w-[calc(100%-1rem)] inline padding — both cause
+ * horizontal overflow when nested. stable-scrollbar-gutter reserves ~15px on
+ * sidebar-content; nav sits inset by px-7 (-mx-3), leaving a wide empty band
+ * between scrollbar and border-r.
+ */
+nav#sidebar {
+  overflow: hidden !important;
+}
+
+/* Flex column shell: no scroll on sidebar-content */
+nav#sidebar > div#sidebar-content,
+nav#sidebar > div#sidebar-content.stable-scrollbar-gutter {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  scrollbar-gutter: auto !important;
+  padding-right: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep right padding on fixed header blocks only */
+nav#sidebar > div#sidebar-content > div:not(#navigation-items) {
+  padding-right: 1.75rem !important;
+  box-sizing: border-box !important;
+}
+
+/*
+ * Scroll only nav list; extend into former px-7 right padding so scrollbar
+ * sits flush against border-r (not ~40px inset).
+ */
+nav#sidebar #navigation-items {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  margin-left: -0.75rem !important;
+  margin-right: 0 !important;
+  width: calc(100% + 0.75rem) !important;
+  padding-right: 2px !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  scrollbar-gutter: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(0, 0, 0, 0.25) transparent !important;
+  box-sizing: border-box !important;
+}
+
+.dark nav#sidebar #navigation-items {
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent !important;
+}
+
+nav#sidebar #navigation-items::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+nav#sidebar #navigation-items::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+nav#sidebar #navigation-items::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border-radius: 9999px !important;
+}
+
+nav#sidebar #navigation-items::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.35) !important;
+}
+
+.dark nav#sidebar #navigation-items::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark nav#sidebar #navigation-items::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Sidebar — remove left border indicator; fix Mintlify width/margin overflow */
 #sidebar-content li > a,
 #sidebar-content li > button {
   border-left: none !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 /* Sidebar — tighten spacing between top-level items */
@@ -30,14 +121,14 @@
   margin-top: 0.375rem !important;
 }
 
-/* 1st level: Installation, Robots — align text under parent group label */
+/* 1st level: Installation, Robots — indent via padding to avoid overflow */
 #sidebar-content .sidebar-group > li > ul > li > a,
 #sidebar-content .sidebar-group > li > ul > li > button {
-  margin-left: 2rem !important;
-  padding-left: 1.75rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 2.75rem !important;
   padding-top: 0.3rem !important;
   padding-bottom: 0.3rem !important;
-  width: calc(100% - 2rem) !important;
 }
 
 #sidebar-content .sidebar-group > li > ul > li[data-group-tag] > button {
@@ -51,11 +142,11 @@
 
 #sidebar-content .sidebar-group > li > ul > li > ul > li > a,
 #sidebar-content .sidebar-group > li > ul > li > ul > li > button {
-  margin-left: 2rem !important;
-  padding-left: 2.5rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 3.5rem !important;
   padding-top: 0.3rem !important;
   padding-bottom: 0.3rem !important;
-  width: calc(100% - 2rem) !important;
 }
 
 /* 3rd level: Gripper, Robot Base under Mycobot */
@@ -65,11 +156,11 @@
 
 #sidebar-content .sidebar-group > li > ul > li > ul > li > ul > li > a,
 #sidebar-content .sidebar-group > li > ul > li > ul > li > ul > li > button {
-  margin-left: 2rem !important;
-  padding-left: 3.25rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 4.25rem !important;
   padding-top: 0.3rem !important;
   padding-bottom: 0.3rem !important;
-  width: calc(100% - 2rem) !important;
 }
 
 /* Sidebar — hide icons on nested groups (group within a group) */
