@@ -25,13 +25,13 @@
           },
           {
             "group": "Isaac Lab",
-            "icon": "flask",
+            "icon": "cube",
             "root": "isaac-lab/index",
             "pages": []
           },
           {
             "group": "Robotics",
-            "icon": "robot",
+            "icon": "cube",
             "root": "robotics/index",
             "pages": []
           }
@@ -67,7 +67,7 @@
           "personal/index",
           {
             "group": "Projects",
-            "icon": "folder-open",
+            "icon": "cube",
             "root": "projects/index",
             "pages": [
               "projects/portfolio"
@@ -75,7 +75,7 @@
           },
           {
             "group": "Setup",
-            "icon": "laptop",
+            "icon": "cube",
             "root": "setup/index",
             "pages": [
               "setup/setup"
@@ -102,8 +102,7 @@
     { "source": "/troubleshooting/isaac-lab", "destination": "/troubleshooting/isaac/isaac-lab" },
     { "source": "/troubleshooting/dev-env", "destination": "/troubleshooting" },
     { "source": "/troubleshooting/general", "destination": "/troubleshooting" },
-    { "source": "/snippets", "destination": "/personal/snippets" },
-    { "source": "/daily-log", "destination": "/personal/daily-log" },
+
     { "source": "/portfolio", "destination": "/projects/portfolio" },
     { "source": "/personal/portfolio", "destination": "/projects/portfolio" }
   ],

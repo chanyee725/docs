@@ -4,24 +4,36 @@
   border-left: none !important;
 }
 
-/* Left sidebar — tighten spacing between nav blocks (~5px) */
+/* Sidebar — tighten spacing between top-level items */
 #sidebar-content > div.flex.flex-col {
-  gap: calc(1rem - 5px) !important;
-  margin-top: calc(1.5rem - 5px) !important;
+  gap: 0.5rem !important;
+  margin-top: 1rem !important;
 }
 
 #sidebar-content ul.list-none.mt-8 {
-  margin-top: calc(2rem - 5px) !important;
+  margin-top: 1rem !important;
 }
 
+/* Sidebar — spacing between groups (Overview, Isaac Sim, etc.) */
 #sidebar-content .sidebar-group {
-  margin-top: calc(1.5rem - 5px) !important;
+  margin-top: 1rem !important;
 }
 
-@media (min-width: 1024px) {
-  #sidebar-content .sidebar-group {
-    margin-top: calc(2rem - 5px) !important;
-  }
+#sidebar-content li > a,
+#sidebar-content li > button {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+/* Sidebar — nested sub-items (e.g. Installation under Isaac Sim) */
+#sidebar-content .sidebar-group > li > ul {
+  margin-top: 0.375rem !important;
+}
+
+#sidebar-content .sidebar-group > li > ul > li > a {
+  margin-left: 30px !important;
+  padding-top: 0.125rem !important;
+  padding-bottom: 0.125rem !important;
 }
 
 /* Top tabs — simple text style (Mintlify nav-tabs selectors) */
