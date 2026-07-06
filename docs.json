@@ -113,6 +113,7 @@
             "icon": "cube",
             "root": "projects/index",
             "pages": [
+              "projects/index",
               {
                 "group": "Bssm",
                 "root": "projects/bssm/index",
