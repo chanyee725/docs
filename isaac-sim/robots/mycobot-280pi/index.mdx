@@ -1,0 +1,46 @@
+---
+title: "Mycobot 280pi"
+sidebarTitle: "Overview"
+description: "Elephant Robotics Mycobot 280pi USD import 및 기본 설정"
+hideFooterPagination: true
+---
+
+Elephant Robotics Mycobot 280pi를 Isaac Sim에 추가할 때 기록하는 설정입니다.
+
+## Model info
+
+| Item | Value |
+| ---- | ----- |
+| Manufacturer | Elephant Robotics |
+| Model | Mycobot 280pi |
+| End effector | Adaptive Gripper |
+| USD file | |
+| Isaac Sim version | |
+
+## Import steps
+
+1. [Robots 공통 절차](/isaac-sim/robots)에 따라 USD를 stage에 추가합니다.
+2. [Robot Base](/isaac-sim/robots/mycobot-280pi/robot-base)를 World 아래에 배치하고 고정합니다.
+3. [Gripper](/isaac-sim/robots/mycobot-280pi/gripper)가 포함된 경우 joint까지 함께 로드되는지 확인합니다.
+
+## Pages
+
+<Columns cols={2}>
+  <Card title="Robot Base" icon="cube" href="/isaac-sim/robots/mycobot-280pi/robot-base">
+    베이스 고정, articulation root, arm joint 설정.
+  </Card>
+  <Card title="Gripper" icon="cube" href="/isaac-sim/robots/mycobot-280pi/gripper">
+    Adaptive Gripper physics 및 Mass 튜닝.
+  </Card>
+</Columns>
+
+## Verify
+
+- [ ] Play 시 로봇이 밀리지 않고 정위치에 고정됨
+- [ ] Arm joint 제어 동작
+- [ ] Gripper open/close 동작
+
+## Related
+
+- [Robots overview](/isaac-sim/robots)
+- [Gripper sliding troubleshooting](/troubleshooting/isaac/mycobot-gripper-sliding)

@@ -1,0 +1,36 @@
+---
+title: "Robot Base"
+sidebarTitle: "Robot Base"
+description: "Mycobot 280pi base link 고정 및 articulation 설정"
+---
+
+Mycobot 280pi robot base 설정을 기록합니다.
+
+## Model info
+
+| Item | Value |
+| ---- | ----- |
+| Base link | |
+| USD file | |
+| Mount type | fixed / mobile |
+
+## Setup
+
+1. Base link를 World 아래 적절한 위치에 배치합니다.
+2. **Fixed Base** 또는 articulation root 설정을 확인합니다.
+3. Arm joint **Rigid Body** / **Collision** 을 활성화합니다.
+
+## Physics notes
+
+| Setting | Notes |
+| ------- | ----- |
+| Fixed base | 시뮬레이션 중 베이스 고정 여부 |
+| Mass | 전체 arm + gripper 대비 base mass 비율 |
+| Collision | base mesh collision |
+| Articulation | root joint, drive mode |
+
+## Verify
+
+- [ ] Play 시 base가 밀리지 않고 고정됨
+- [ ] Arm joint 제어 동작
+- [ ] Transform(scale, position) 의도한 값 유지

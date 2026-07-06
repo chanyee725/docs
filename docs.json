@@ -26,7 +26,15 @@
                 "root": "isaac-sim/robots/index",
                 "directory": "card",
                 "pages": [
-                  "isaac-sim/robots/mycobot-280pi"
+                  {
+                    "group": "Mycobot 280pi",
+                    "root": "isaac-sim/robots/mycobot-280pi/index",
+                    "pages": [
+                      "isaac-sim/robots/mycobot-280pi/index",
+                      "isaac-sim/robots/mycobot-280pi/gripper",
+                      "isaac-sim/robots/mycobot-280pi/robot-base"
+                    ]
+                  }
                 ]
               }
             ]

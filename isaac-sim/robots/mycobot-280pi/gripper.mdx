@@ -1,0 +1,39 @@
+---
+title: "Gripper"
+sidebarTitle: "Gripper"
+description: "Mycobot 280pi Adaptive Gripper USD 및 physics 설정"
+---
+
+Mycobot 280pi Adaptive Gripper 설정을 기록합니다.
+
+## Model info
+
+| Item | Value |
+| ---- | ----- |
+| End effector | Adaptive Gripper |
+| USD file | |
+| Attached to | Mycobot 280pi arm |
+
+## Setup
+
+1. Gripper USD가 arm end link에 올바르게 연결되었는지 확인합니다.
+2. **Property → Physics (Rigid Body)** 에서 Mass · inertia 값을 확인합니다.
+3. Gripper joint drive / limits를 설정합니다.
+
+## Physics notes
+
+| Setting | Notes |
+| ------- | ----- |
+| Mass | Robot Base 대비 비율 확인 — 불안정 시 조정 |
+| Collision | finger mesh collision 활성화 |
+| Joint | open/close range, drive strength |
+
+<Warning>
+  Mass 비율이 맞지 않으면 그리퍼가 밀리는 현상이 발생할 수 있습니다. [Gripper sliding](/troubleshooting/isaac/mycobot-gripper-sliding) 참고.
+</Warning>
+
+## Verify
+
+- [ ] Play 시 gripper가 뒤로 밀리지 않음
+- [ ] Open / close 동작
+- [ ] Arm 제어 시 gripper 위치 유지
