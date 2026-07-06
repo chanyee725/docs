@@ -43,13 +43,16 @@
         "pages": [
           "troubleshooting/index",
           {
-            "group": "Isaac",
+            "group": "Isaac Sim",
             "icon": "cube",
-            "root": "troubleshooting/isaac/index",
-            "pages": [
-              "troubleshooting/isaac/isaac-sim",
-              "troubleshooting/isaac/isaac-lab"
-            ]
+            "root": "troubleshooting/isaac/isaac-sim",
+            "pages": []
+          },
+          {
+            "group": "Isaac Lab",
+            "icon": "cube",
+            "root": "troubleshooting/isaac/isaac-lab",
+            "pages": []
           }
         ]
       },
@@ -98,6 +101,7 @@
     { "source": "/study-notes/isaac-lab", "destination": "/isaac-lab" },
     { "source": "/study-notes/robotics", "destination": "/robotics" },
     { "source": "/blog", "destination": "/troubleshooting" },
+    { "source": "/troubleshooting/isaac", "destination": "/troubleshooting" },
     { "source": "/troubleshooting/isaac-sim", "destination": "/troubleshooting/isaac/isaac-sim" },
     { "source": "/troubleshooting/isaac-lab", "destination": "/troubleshooting/isaac/isaac-lab" },
     { "source": "/troubleshooting/dev-env", "destination": "/troubleshooting" },
