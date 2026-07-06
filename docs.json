@@ -32,19 +32,22 @@
         "icon": "wrench",
         "pages": [
           "troubleshooting/index",
-          "troubleshooting/isaac-sim",
-          "troubleshooting/dev-env",
-          "troubleshooting/general"
+          {
+            "group": "Isaac",
+            "icon": "cube",
+            "root": "troubleshooting/isaac/index",
+            "pages": [
+              "troubleshooting/isaac/isaac-sim",
+              "troubleshooting/isaac/isaac-lab"
+            ]
+          }
         ]
       },
       {
         "tab": "Refs",
         "icon": "bookmark",
         "pages": [
-          "references/index",
-          "references/isaac-sim",
-          "references/robotics",
-          "references/tools"
+          "references/index"
         ]
       },
       {
@@ -58,6 +61,14 @@
             "root": "projects/index",
             "pages": [
               "projects/portfolio"
+            ]
+          },
+          {
+            "group": "Setup",
+            "icon": "laptop",
+            "root": "setup/index",
+            "pages": [
+              "setup/setup"
             ]
           }
         ]
@@ -73,6 +84,10 @@
     { "source": "/study-notes/isaac-lab", "destination": "/study/isaac-lab" },
     { "source": "/study-notes/robotics", "destination": "/study/robotics" },
     { "source": "/blog", "destination": "/troubleshooting" },
+    { "source": "/troubleshooting/isaac-sim", "destination": "/troubleshooting/isaac/isaac-sim" },
+    { "source": "/troubleshooting/isaac-lab", "destination": "/troubleshooting/isaac/isaac-lab" },
+    { "source": "/troubleshooting/dev-env", "destination": "/troubleshooting" },
+    { "source": "/troubleshooting/general", "destination": "/troubleshooting" },
     { "source": "/snippets", "destination": "/personal/snippets" },
     { "source": "/daily-log", "destination": "/personal/daily-log" },
     { "source": "/portfolio", "destination": "/projects/portfolio" },

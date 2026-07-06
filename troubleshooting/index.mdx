@@ -7,7 +7,27 @@ hideFooterPagination: true
 
 Log errors, dead ends, and solutions here so you don't solve the same problem twice.
 
-## How to log an issue
+## How to add a page
+
+1. Create an MDX file — e.g. `troubleshooting/isaac/isaac-lab.mdx`.
+2. Register it in `docs.json` → **Troubleshooting** tab → under the right group `pages` array.
+3. Run `mint dev` locally to preview. Push to deploy.
+
+Each topic is one long page. Add a new `###` section at the top for each issue — newest first.
+
+## How to add an image
+
+Put screenshots under `troubleshooting/isaac/images/<topic>/` and reference them with an absolute path:
+
+```mdx
+<Frame caption="What this screenshot shows">
+  <img src="/troubleshooting/isaac/images/isaac-sim/gpu-error.png" alt="GPU driver error dialog" />
+</Frame>
+```
+
+Use PNG or WebP. Name files by issue slug (e.g. `conda-env-mismatch.png`) so they stay easy to find.
+
+## Issue template
 
 ```markdown
 ### [Short title] — YYYY-MM-DD
@@ -24,13 +44,7 @@ Log errors, dead ends, and solutions here so you don't solve the same problem tw
 ```
 
 <Columns cols={2}>
-  <Card title="Isaac Sim" icon="cube" href="/troubleshooting/isaac-sim">
-    GPU, CUDA, Omniverse, and simulation launch issues.
-  </Card>
-  <Card title="Dev environment" icon="terminal" href="/troubleshooting/dev-env">
-    CLI, Mintlify, Git, and local setup problems.
-  </Card>
-  <Card title="General" icon="list" href="/troubleshooting/general">
-    Everything else — OS, drivers, and misc fixes.
+  <Card title="Isaac" icon="cube" href="/troubleshooting/isaac">
+    Isaac Sim and Isaac Lab — GPU, Omniverse, RL, and training issues.
   </Card>
 </Columns>

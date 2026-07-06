@@ -1,44 +1,22 @@
-/* Navigation/sidebar overrides temporarily disabled for debugging */
+/* Left sidebar — tighten spacing between nav blocks (~5px) */
+#sidebar-content > div.flex.flex-col {
+  gap: calc(1rem - 5px) !important;
+  margin-top: calc(1.5rem - 5px) !important;
+}
 
-/*
+#sidebar-content ul.list-none.mt-8 {
+  margin-top: calc(2rem - 5px) !important;
+}
+
 #sidebar-content .sidebar-group {
-  margin-top: calc(1.5rem - 10px) !important;
+  margin-top: calc(1.5rem - 5px) !important;
 }
 
 @media (min-width: 1024px) {
   #sidebar-content .sidebar-group {
-    margin-top: calc(2rem - 12px) !important;
+    margin-top: calc(2rem - 5px) !important;
   }
 }
-
-#sidebar-content .sidebar-group > li > button > div:first-child svg {
-  width: 0.875rem !important;
-  height: 0.875rem !important;
-}
-
-#sidebar-content .sidebar-group > li > button > div:nth-child(2) > span {
-  font-size: 0.8125rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.01em;
-}
-
-#sidebar-content .sidebar-group > li > button {
-  color: #111827 !important;
-  gap: 0.625rem !important;
-}
-
-.dark #sidebar-content .sidebar-group > li > button {
-  color: #f3f4f6 !important;
-}
-
-#sidebar-content .sidebar-group > li > button:hover {
-  color: #111827 !important;
-}
-
-.dark #sidebar-content .sidebar-group > li > button:hover {
-  color: #f3f4f6 !important;
-}
-*/
 
 /* Top tabs — simple text style (Mintlify nav-tabs selectors) */
 @media (min-width: 1024px) {
