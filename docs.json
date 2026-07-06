@@ -107,8 +107,14 @@
             "icon": "cube",
             "root": "projects/index",
             "pages": [
-              "projects/medical-smart-mirror",
-              "projects/photo-immersion"
+              {
+                "group": "Bssm",
+                "root": "projects/bssm/index",
+                "pages": [
+                  "projects/bssm/medical-smart-mirror",
+                  "projects/bssm/photo-immersion"
+                ]
+              }
             ]
           },
           {
