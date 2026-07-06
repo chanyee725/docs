@@ -22,6 +22,22 @@
             "pages": [
               "isaac-sim/installation",
               {
+                "group": "Basics",
+                "root": "isaac-sim/basics/index",
+                "pages": [
+                  "isaac-sim/basics/physics-hw-gpu-cpu",
+                  "isaac-sim/basics/precision-control",
+                  "isaac-sim/basics/collision-mesh-visualization",
+                  "isaac-sim/basics/color-editing",
+                  "isaac-sim/basics/joint-creation",
+                  "isaac-sim/basics/joint-limit-visualization",
+                  "isaac-sim/basics/ee-add",
+                  "isaac-sim/basics/gripper-material-physics",
+                  "isaac-sim/basics/material-physics",
+                  "isaac-sim/basics/lula-collision-spheres"
+                ]
+              },
+              {
                 "group": "Robots",
                 "root": "isaac-sim/robots/index",
                 "directory": "card",
