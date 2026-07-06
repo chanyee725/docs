@@ -20,7 +20,15 @@
             "icon": "cube",
             "root": "isaac-sim/index",
             "pages": [
-              "isaac-sim/installation"
+              "isaac-sim/installation",
+              {
+                "group": "Robots",
+                "root": "isaac-sim/robots/index",
+                "directory": "card",
+                "pages": [
+                  "isaac-sim/robots/mycobot-280pi"
+                ]
+              }
             ]
           },
           {

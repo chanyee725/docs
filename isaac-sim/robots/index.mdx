@@ -1,0 +1,51 @@
+---
+title: "Robots"
+sidebarTitle: "Overview"
+description: "로봇 USD 파일을 Isaac Sim stage에 추가하는 공통 절차"
+hideFooterPagination: true
+---
+
+Isaac Sim에 로봇 USD를 추가할 때 공통으로 따르는 절차입니다. 로봇별 파일 경로·physics 설정은 아래 **Robot models**에서 확인하세요.
+
+## 공통 절차
+
+### 1. USD 파일 준비
+
+| Item | Notes |
+| ---- | ----- |
+| Format | `.usd` / `.usda` / `.usdc` |
+| Source | 다운로드, URDF 변환, 직접 제작 등 |
+| Dependencies | texture, mesh reference 경로 확인 |
+
+### 2. Stage에 추가
+
+1. Isaac Sim을 실행합니다.
+2. **File → Add Reference** (또는 Content Browser에서 stage로 드래그)로 USD를 추가합니다.
+3. World 아래 적절한 경로에 배치하고 Transform(scale, position)을 확인합니다.
+
+<Tip>
+  Reference는 원본 파일을 가리키고, Payload는 필요할 때 로드하는 방식입니다. 로봇 에셋은 보통 Reference로 추가합니다.
+</Tip>
+
+### 3. Physics 설정
+
+모든 로봇에 공통으로 확인할 항목입니다.
+
+- [ ] Base link **Rigid Body** / **Collision** 활성화
+- [ ] Base 고정 여부 (fixed base / articulation root)
+- [ ] Joint drive / limits 설정
+- [ ] Mass · inertia 값이 비현실적이지 않은지 확인
+
+<Warning>
+  Mass 비율이 맞지 않으면 시뮬레이션 중 로봇이 밀리거나 튕길 수 있습니다. [Gripper sliding](/troubleshooting/isaac/mycobot-gripper-sliding) 참고.
+</Warning>
+
+### 4. 동작 확인
+
+1. **Play**로 시뮬레이션을 시작합니다.
+2. 로봇이 의도한 위치에 고정되는지 확인합니다.
+3. 조인트 제어(키보드, ROS 2, 스크립트)가 동작하는지 확인합니다.
+
+## Robot models
+
+로봇을 추가하면 이 섹션 아래에 카드로 표시됩니다. 새 로봇은 `isaac-sim/robots/`에 MDX 파일을 만들고 `docs.json`에 등록하세요.
