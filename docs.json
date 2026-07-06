@@ -107,7 +107,8 @@
             "icon": "cube",
             "root": "projects/index",
             "pages": [
-              "projects/portfolio"
+              "projects/medical-smart-mirror",
+              "projects/photo-immersion"
             ]
           },
           {
@@ -150,8 +151,9 @@
     { "source": "/troubleshooting/dev-env", "destination": "/troubleshooting" },
     { "source": "/troubleshooting/general", "destination": "/troubleshooting" },
 
-    { "source": "/portfolio", "destination": "/projects/portfolio" },
-    { "source": "/personal/portfolio", "destination": "/projects/portfolio" }
+    { "source": "/portfolio", "destination": "/projects" },
+    { "source": "/personal/portfolio", "destination": "/projects" },
+    { "source": "/projects/portfolio", "destination": "/projects" }
   ],
   "logo": {
     "light": "/logo/light.svg",
