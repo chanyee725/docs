@@ -159,7 +159,9 @@
 
     { "source": "/portfolio", "destination": "/projects" },
     { "source": "/personal/portfolio", "destination": "/projects" },
-    { "source": "/projects/portfolio", "destination": "/projects" }
+    { "source": "/projects/portfolio", "destination": "/projects" },
+    { "source": "/projects/medical-smart-mirror", "destination": "/projects/bssm/medical-smart-mirror" },
+    { "source": "/projects/photo-immersion", "destination": "/projects/bssm/photo-immersion" }
   ],
   "logo": {
     "light": "/logo/light.svg",
